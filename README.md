@@ -16,10 +16,31 @@ Authenticate to Hugging Face (for gated models):
 export HF_TOKEN="<your_huggingface_token>"
 python -c "from huggingface_hub import login; import os; login(token=os.getenv('HF_TOKEN'))"
 ```
+## Environemnt 
+
+We ran the main experiments on an HPC cluster to speed up LLM inference and activation collection.
+- OS: Linux (HPC login/compute nodes)
+- Python: 3.10+ (3.11 also works)
+- GPU: Recommended (e.g., 1× NVIDIA GPU with >= 16GB VRAM). CPU will run but is much slower.
 
 ## Datasets
 
 CSV format: two columns `statement` (string) and `label` (1=true, 0=false). Provided demo datasets include curated and complex sets (e.g., `animal_class.csv`, `cities.csv`, `sp_en_trans.csv`). Verify redistribution rights if replacing these with your own data.
+
+## Baseline vs experiments
+
+run.sh is the entry point used for our final experiments (baseline vs improved)
+
+
+## Contribution
+
+Ruksaar Shaik
+Collecting the Datasets and Baseline Experiments
+Implementing Reading Pipeline
+Xianxuan Long
+Implementing Control Pipeline
+Implementing Intervention Experiments
+
 
 ## Citation
 
